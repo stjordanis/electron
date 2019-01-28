@@ -8,6 +8,15 @@ The `FIXME` string is used in code comments to denote things that should be fixe
 
 # Planned Breaking API Changes (6.0)
 
+## `win.setMenu(null)`
+
+```js
+// Deprecated
+win.setMenu(null)
+// Replace with
+win.removeMenu()
+```
+
 ## `electron.screen` in renderer process
 
 ```js
@@ -59,7 +68,7 @@ Child windows opened with the `nativeWindowOpen` option will always have Node.js
 
 # Planned Breaking API Changes (4.0)
 
-The following list includes the breaking API changes planned for Electron 4.0.
+The following list includes the breaking API changes made in Electron 4.0.
 
 ## `app.makeSingleInstance`
 
