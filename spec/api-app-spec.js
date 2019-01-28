@@ -1201,6 +1201,99 @@ describe('app module', () => {
       expect(getSwitchValue).to.equal('')
     })
   })
+
+  describe('sysInfo.numberOfProcessors', () => {
+    it('returns a number', () => {
+      expect(app.sysInfo.numberOfProcessors()).to.be.a('number')
+    })
+  })
+
+  describe('sysInfo.amountOfPhysicalMemory', () => {
+    it('returns a number', () => {
+      expect(app.sysInfo.amountOfPhysicalMemory()).to.be.a('number')
+    })
+  })
+
+  describe('sysInfo.amountOfAvailablePhysicalMemory', () => {
+    it('returns a number', () => {
+      expect(app.sysInfo.amountOfAvailablePhysicalMemory()).to.be.a('number')
+    })
+  })
+
+  describe('sysInfo.amountOfVirtualMemory', () => {
+    it('returns a number', () => {
+      expect(app.sysInfo.amountOfVirtualMemory()).to.be.a('number')
+    })
+  })
+
+  describe('sysInfo.amountOfFreeDiskSpace', () => {
+    it('returns a number', () => {
+      expect(app.sysInfo.amountOfFreeDiskSpace('/')).to.be.a('number')
+    })
+  })
+
+  describe('sysInfo.amountOfTotalDiskSpace', () => {
+    it('returns a number', () => {
+      expect(app.sysInfo.amountOfTotalDiskSpace('/')).to.be.a('number')
+    })
+  })
+
+  describe('sysInfo.uptime', () => {
+    it('returns a number', () => {
+      expect(app.sysInfo.uptime()).to.be.a('number')
+    })
+  })
+
+  describe('sysInfo.hardwareModelName', () => {
+    it('returns a string', () => {
+      expect(app.sysInfo.hardwareModelName()).to.be.a('string')
+    })
+  })
+
+  describe('sysInfo.getHardwareInfo', () => {
+    it('returns the information', async () => {
+      const info = await app.sysInfo.getHardwareInfo()
+      expect(info).to.have.own.property('manufacturer').that.is.a('string')
+      expect(info).to.have.own.property('model').that.is.a('string')
+      expect(info).to.have.own.property('serialNumber').that.is.a('string')
+    })
+  })
+
+  describe('sysInfo.operatingSystemName', () => {
+    it('returns a string', () => {
+      expect(app.sysInfo.operatingSystemName()).to.be.a('string')
+    })
+  })
+
+  describe('sysInfo.operatingSystemVersion', () => {
+    it('returns a string', () => {
+      expect(app.sysInfo.operatingSystemVersion()).to.be.a('string')
+    })
+  })
+
+  describe('sysInfo.operatingSystemArchitecture', () => {
+    it('returns a string', () => {
+      expect(app.sysInfo.operatingSystemArchitecture()).to.be.a('string')
+    })
+  })
+
+  describe('sysInfo.cpuModelName', () => {
+    it('returns a string', () => {
+      expect(app.sysInfo.cpuModelName()).to.be.a('string')
+    })
+  })
+
+  describe('sysInfo.vmAllocationGranularity', () => {
+    it('returns a number', () => {
+      expect(app.sysInfo.vmAllocationGranularity()).to.be.a('number')
+    })
+  })
+
+  describe('sysInfo.isLowEndDevice', () => {
+    it('returns a boolean', () => {
+      expect(app.sysInfo.isLowEndDevice()).to.be.a('boolean')
+    })
+  })
 })
 
 describe('default behavior', () => {
